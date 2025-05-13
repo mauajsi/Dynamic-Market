@@ -1,0 +1,70 @@
+name: DynamicMarket
+version: 1.1
+main: com.example.economia.EconomiaPlugin
+api-version: 1.13
+depend: [Vault]
+
+commands:
+  market:
+    description: Opens the market GUI
+    usage: /market
+  sell:
+    description: Opens the sell GUI
+    usage: /sell
+  marketadmin:
+    description: Admin commands for market management
+    usage: /marketadmin
+    permission: market.admin
+  
+  marketsettings:
+    description: Modify market settings in-game
+    usage: /marketsettings <setting> <value>
+    permission: market.admin
+    aliases: [mset, marketset]
+    
+  setslot:
+    description: Set the slot position for a category in the market GUI
+    usage: /setslot <category> <slot>
+    permission: market.admin.slot
+    aliases: [marketslot]
+
+permissions:
+  market.admin:
+    description: Allows modification of market settings
+    default: op
+    children:
+      market.admin.reset: true
+      market.admin.category: true
+      market.admin.add: true
+      market.admin.remove: true
+      market.admin.setprice: true
+      market.admin.move: true
+      market.admin.slot: true  # Add this line
+  
+  market.admin.slot:
+    description: Allows changing category slot positions in GUI
+    default: op
+  
+  market.admin.category:
+    description: Allows adding new categories
+    default: op
+  
+  market.admin.add:
+    description: Allows adding items to the market
+    default: op
+  
+  market.admin.remove:
+    description: Allows removing items from the market
+    default: op
+  
+  market.admin.setprice:
+    description: Allows changing item prices
+    default: op
+  
+  market.admin.move:
+    description: Allows moving items between categories
+    default: op
+  
+  market.admin.reset:
+    description: Allows resetting the market to default
+    default: op
