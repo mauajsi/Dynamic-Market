@@ -1,0 +1,286 @@
+# ========================================
+# DynamicMarket Plugin Configuration
+# ========================================
+
+# Plugin settings
+plugin:
+  # Plugin version (do not modify)
+  version: "1.0.0"
+  
+  # Debug mode (enables additional logging)
+  debug: false
+  
+  # Language file to use
+  language: "en"
+  
+  # Auto-save interval in minutes
+  auto-save-interval: 5
+
+# Economy settings
+economy:
+  # Starting money for new players
+  starting-money: 1000.0
+  
+  # Confirmation threshold for expensive purchases
+  confirmation-threshold: 10000.0
+  
+  # Transaction cooldown in seconds (0 to disable)
+  transaction-cooldown: 1
+  
+  # Maximum transactions per minute per player
+  max-transactions-per-minute: 30
+
+# Market settings
+market:
+  # Price adjustment settings
+  price-adjustment:
+    # Base adjustment rate (0.01 = 1%)
+    base-rate: 0.02
+    
+    # Maximum price increase per transaction (0.05 = 5%)
+    max-increase: 0.05
+    
+    # Maximum price decrease per transaction (0.03 = 3%)
+    max-decrease: 0.03
+    
+    # Time-based price decay rate (0.001 = 0.1% per hour)
+    decay-rate: 0.001
+    
+    # Decay interval in hours
+    decay-interval: 1
+  
+  # Price limits
+  price-limits:
+    # Minimum price multiplier (0.1 = 10% of base price)
+    min-multiplier: 0.1
+    
+    # Maximum price multiplier (5.0 = 500% of base price)
+    max-multiplier: 5.0
+    
+    # Minimum absolute price
+    min-price: 0.01
+    
+    # Maximum absolute price
+    max-price: 1000000.0
+  
+  # Stock settings
+  stock:
+    # Default stock for new items
+    default-stock: 64
+    
+    # Maximum stock per item
+    max-stock: 999
+    
+    # Low stock threshold for warnings
+    low-stock-threshold: 10
+    
+    # Auto-restock settings
+    auto-restock:
+      enabled: true
+      # Restock amount when stock is low
+      amount: 32
+      # Minimum time between restocks (in minutes)
+      cooldown: 30
+  
+  # Demand and supply multipliers
+  multipliers:
+    # High demand multiplier (when stock is low)
+    high-demand: 1.5
+    
+    # Low demand multiplier (when stock is high)
+    low-demand: 0.8
+    
+    # High supply multiplier (when many items are sold)
+    high-supply: 0.9
+    
+    # Low supply multiplier (when few items are sold)
+    low-supply: 1.2
+
+# GUI settings
+gui:
+  # GUI titles
+  titles:
+    market: "§c§lDynamic Market"
+    category: "§e§l{category} - Page {page}"
+    sell: "§a§lSell Items"
+    confirmation: "§6§lConfirm Purchase"
+  
+  # GUI sizes (must be multiples of 9, max 54)
+  sizes:
+    market: 54
+    category: 54
+    sell: 54
+    confirmation: 27
+  
+  # Update intervals (in seconds)
+  update-intervals:
+    # How often to refresh prices in open GUIs
+    price-refresh: 30
+    
+    # How often to refresh stock information
+    stock-refresh: 10
+  
+  # Animation settings
+  animations:
+    # Enable GUI animations
+    enabled: true
+    
+    # Animation speed (ticks between frames)
+    speed: 10
+
+# Database settings
+database:
+  # Database type: sqlite, mysql
+  type: "sqlite"
+  
+  # SQLite settings
+  sqlite:
+    # Database file name
+    filename: "market.db"
+  
+  # MySQL settings (if using MySQL)
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "dynamicmarket"
+    username: "root"
+    password: "password"
+    # Connection pool settings
+    pool:
+      max-connections: 10
+      connection-timeout: 30000
+  
+  # Backup settings
+  backup:
+    # Enable automatic backups
+    enabled: true
+    
+    # Backup interval in hours
+    interval: 24
+    
+    # Maximum number of backups to keep
+    max-backups: 7
+    
+    # Backup compression
+    compress: true
+
+# Logging settings
+logging:
+  # Log transactions
+  transactions: true
+  
+  # Log price changes
+  price-changes: true
+  
+  # Log admin actions
+  admin-actions: true
+  
+  # Log player joins/leaves
+  player-events: false
+  
+  # Maximum log file size in MB
+  max-file-size: 10
+  
+  # Number of log files to keep
+  max-files: 5
+
+# Performance settings
+performance:
+  # Cache settings
+  cache:
+    # Enable caching
+    enabled: true
+    
+    # Cache size (number of items)
+    size: 1000
+    
+    # Cache expiration time in minutes
+    expiration: 30
+  
+  # Async processing
+  async:
+    # Enable async database operations
+    database: true
+    
+    # Enable async price calculations
+    calculations: true
+    
+    # Thread pool size
+    thread-pool-size: 4
+
+# Integration settings
+integrations:
+  # PlaceholderAPI support
+  placeholderapi:
+    enabled: true
+  
+  # WorldGuard integration
+  worldguard:
+    enabled: false
+    # Regions where market is disabled
+    disabled-regions: []
+  
+  # Towny integration
+  towny:
+    enabled: false
+    # Allow market in wilderness
+    allow-wilderness: true
+
+# Notification settings
+notifications:
+  # Admin notifications
+  admin:
+    # Notify on low stock
+    low-stock: true
+    
+    # Notify on price anomalies
+    price-anomalies: true
+    
+    # Notify on high activity
+    high-activity: true
+  
+  # Player notifications
+  player:
+    # Welcome message on join
+    welcome: true
+    
+    # Transaction confirmations
+    transactions: true
+    
+    # Price change notifications
+    price-changes: false
+
+# Security settings
+security:
+  # Anti-spam settings
+  anti-spam:
+    # Enable anti-spam protection
+    enabled: true
+    
+    # Maximum clicks per second
+    max-clicks-per-second: 5
+    
+    # Punishment duration in seconds
+    punishment-duration: 30
+  
+  # Transaction limits
+  limits:
+    # Maximum purchase amount per transaction
+    max-purchase-amount: 64
+    
+    # Maximum sell amount per transaction
+    max-sell-amount: 64
+    
+    # Daily transaction limit per player
+    daily-limit: 1000
+
+# Market categories configuration
+# This section will be populated automatically when categories are created
+categories: {}
+
+# Market items configuration
+# This section will be populated automatically when items are added
+items: {}
+
+# Do not modify below this line
+config-version: 1

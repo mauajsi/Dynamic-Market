@@ -1,0 +1,250 @@
+# ========================================
+# DynamicMarket Messages (English)
+# ========================================
+
+# General messages
+general:
+  prefix: "&8[&6DynamicMarket&8]&r "
+  no-permission: "&8[&6DynamicMarket&8] &cYou don't have permission to execute this command!"
+  player-only: "&8[&6DynamicMarket&8] &cThis command can only be used by players!"
+  invalid-player: "&8[&6DynamicMarket&8] &cPlayer not found!"
+  invalid-number: "&8[&6DynamicMarket&8] &cInvalid number: {number}"
+  invalid-amount: "&8[&6DynamicMarket&8] &cInvalid amount! Must be between 1 and {max}"
+  command-disabled: "&8[&6DynamicMarket&8] &cThis command is currently disabled!"
+  cooldown: "&8[&6DynamicMarket&8] &cWait {time} seconds before using this command again!"
+  
+# Economy messages
+economy:
+  insufficient-funds: "&8[&6DynamicMarket&8] &cInsufficient funds! You need &e${amount}&c more."
+  transaction-success: "&8[&6DynamicMarket&8] &aTransaction completed successfully!"
+  balance: "&8[&6DynamicMarket&8] &eYour balance: &a${balance}"
+  no-economy: "&8[&6DynamicMarket&8] &cEconomy system not available!"
+  
+# Market messages
+market:
+  # General market messages
+  welcome: "&8[&6DynamicMarket&8] &aWelcome to Dynamic Market! Use &e/market&a to browse items."
+  opening: "&8[&6DynamicMarket&8] &aOpening market..."
+  refreshing: "&8[&6DynamicMarket&8] &aRefreshing market data..."
+  no-categories: "&8[&6DynamicMarket&8] &cNo market categories available!"
+  no-items: "&8[&6DynamicMarket&8] &cNo items available in this category!"
+  insufficient-items: "&8[&6DynamicMarket&8] &cNot enough items! You have &e{available}&c items, but &e{required}&c are needed."
+  messages.sell-gui-opened: "&8[&6DynamicMarket&8] &aSell menu opened!"
+
+  # Purchase messages
+  purchase:
+    success: "&8[&6DynamicMarket&8] &aSuccessfully purchased &e{amount}x {item}&a for &e${cost}&a!"
+    failed: "&8[&6DynamicMarket&8] &cPurchase failed: {reason}"
+    insufficient-stock: "&8[&6DynamicMarket&8] &cInsufficient stock! Only {stock} available."
+    insufficient-funds: "&8[&6DynamicMarket&8] &cInsufficient funds! You need &e${amount}&c more."
+    inventory-full: "&8[&6DynamicMarket&8] &cYour inventory is full! Need {slots} free slots."
+    confirm: "&8[&6DynamicMarket&8] &eClick to confirm purchase of &a{amount}x {item}&e for &a${cost}&e"
+    cancelled: "&8[&6DynamicMarket&8] &cPurchase cancelled."
+    
+  # Sell messages
+  sell:
+    success: "&8[&6DynamicMarket&8] &aSuccessfully sold &e{amount}x {item}&a for &e${earnings}&a!"
+    failed: "&8[&6DynamicMarket&8] &cSale failed: {reason}"
+    no-items: "&8[&6DynamicMarket&8] &cYou don't have any {item} to sell!"
+    not-sellable: "&8[&6DynamicMarket&8] &cThis item cannot be sold to the market!"
+    all-success: "&8[&6DynamicMarket&8] &aSold all items for &e${earnings}&a!"
+    preview: "&8[&6DynamicMarket&8] &eSelling {amount}x {item} will earn you &a${earnings}&e"
+    
+  # Stock messages
+  stock:
+    low: "&8[&6DynamicMarket&8] &6Warning: low stock of {item} ({stock} remaining)!"
+    out: "&8[&6DynamicMarket&8] &cOut of stock: {item}"
+    restocked: "&8[&6DynamicMarket&8] &a{item} has been restocked! ({amount} added)"
+    
+  # Price messages
+  price:
+    increased: "&8[&6DynamicMarket&8] &ePrice of {item} increased to &a${price}&e (was &7${old_price}&e)"
+    decreased: "&8[&6DynamicMarket&8] &ePrice of {item} decreased to &a${price}&e (was &7${old_price}&e)"
+    updated: "&8[&6DynamicMarket&8] &aPrices updated for {count} items."
+    
+# GUI messages
+gui:
+  # Navigation
+  navigation:
+    back: "&e← Back"
+    next-page: "&aNext Page →"
+    previous-page: "&a← Previous Page"
+    refresh: "&bRefresh"
+    close: "&cClose"
+    
+  # Market GUI
+  market:
+    title: "Dynamic Market"
+    category-lore:
+      - "&7Category: &e{category}"
+      - "&7Items: &a{count}"
+      - "&7Average Buy Price: &e${avg_buy}"
+      - "&7Average Sell Price: &e${avg_sell}"
+      - ""
+      - "&eClick to browse items!"
+    
+    player-info:
+      - "&7Player: &e{player}"
+      - "&7Balance: &a${balance}"
+      - "&7Transactions: &b{transactions}"
+      - ""
+      - "&7Market Status: &aOnline"
+    
+    sell-items:
+      - "&aSell Your Items"
+      - ""
+      - "&7Click to open the sell menu"
+      - "&7and sell items from your inventory!"
+    
+    statistics:
+      - "&bMarket Statistics"
+      - ""
+      - "&7Total Categories: &e{categories}"
+      - "&7Total Items: &e{items}"
+      - "&7Active Players: &e{players}"
+      - "&7Total Transactions: &e{transactions}"
+      
+  # Category GUI
+  category:
+    item-lore:
+      - "&7Buy Price: &a${buy_price}"
+      - "&7Sell Price: &e${sell_price}"
+      - "&7Stock: &b{stock}"
+      - "&7Demand: {demand_color}{demand}"
+      - ""
+      - "&7Recent Activity:"
+      - "&7▪ Purchases: &a{purchases}"
+      - "&7▪ Sales: &e{sales}"
+      - ""
+      - "&eLeft-click to buy 1"
+      - "&eShift+Left-click to buy 16"
+      - "&eRight-click to buy 64"
+      - "&eShift+Right-click to buy maximum"
+    
+    category-info:
+      - "&eCategory: &a{category}"
+      - "&7Items: &b{count}"
+      - "&7Page: &e{page}&7/&e{max_page}"
+      - ""
+      - "&7Total Value: &a${total_value}"
+      
+  # Sell GUI
+  sell:
+    item-lore:
+      - "&7Sell Price: &a${sell_price}"
+      - "&7You Own: &b{amount}"
+      - ""
+      - "&7Potential Earnings:"
+      - "&7▪ 1x: &a${earn_1}"
+      - "&7▪ 16x: &a${earn_16}"
+      - "&7▪ 64x: &a${earn_64}"
+      - "&7▪ All: &a${earn_all}"
+      - ""
+      - "&eLeft-click to sell 1"
+      - "&eShift+Left-click to sell 16"
+      - "&eRight-click to sell 64"
+      - "&eShift+Right-click to sell all"
+    
+    sell-all:
+      - "&aSell All Items"
+      - ""
+      - "&7Total Potential Earnings: &a${total}"
+      - "&7Sellable Items: &b{count}"
+      - ""
+      - "&eClick to sell all sellable items!"
+    
+    no-sellable:
+      - "&cNo Sellable Items"
+      - ""
+      - "&7You don't have any items"
+      - "&7that can be sold to the market."
+      
+  # Confirmation GUI
+  confirmation:
+    confirm:
+      - "&a&lCONFIRM PURCHASE"
+      - ""
+      - "&7Item: &e{item}"
+      - "&7Amount: &b{amount}"
+      - "&7Total Cost: &a${cost}"
+      - ""
+      - "&7Your Balance: &e${balance}"
+      - "&7After Purchase: &a${after_balance}"
+      - ""
+      - "&eClick to confirm!"
+    
+    cancel:
+      - "&c&lCANCEL PURCHASE"
+      - ""
+      - "&7Click to cancel this purchase"
+      - "&7and return to the market."
+    
+    warning:
+      - "&6&lEXPENSIVE PURCHASE"
+      - ""
+      - "&7This is an expensive purchase!"
+      - "&7Confirm if you want to proceed."
+      
+# Command messages
+commands:
+  # Market command
+  market:
+    help:
+      - "&c&l=== Market Commands ==="
+      - "&e/market &7- Open the market"
+      - "&e/market help &7- Show this help"
+      - "&e/market stats &7- View market statistics"
+      - "&e/market balance &7- Check your balance"
+      - "&e/market search <item> &7- Search items"
+      - "&e/market category <name> &7- Open specific category"
+      - "&e/market reload &7- Reload market (admin)"
+    
+    stats:
+      - "&c&l=== Market Statistics ==="
+      - "&7▪ Total Categories: &e{categories}"
+      - "&7▪ Total Items: &e{items}"
+      - "&7▪ Your Transactions: &e{transactions}"
+      - "&7▪ Total Spent: &a${spent}"
+      - "&7▪ Total Earned: &a${earned}"
+      - "&7▪ Market Activity: {activity_color}{activity}"
+    
+    search-results:
+      - "&e&l=== Search Results for '{query}' ==="
+      - "&7Found {count} items:"
+    
+    search-item:
+      - "&7▪ &e{item} &7in &a{category} &7- Buy: &a${buy} &7Sell: &e${sell}"
+    
+    no-results: "&8[&6DynamicMarket&8] &cNo items found for '{query}'!"
+    category-not-found: "&8[&6DynamicMarket&8] &cCategory '{category}' not found!"
+    reloaded: "&8[&6DynamicMarket&8] &aMarket data reloaded successfully!"
+    
+  # Sell command
+  sell:
+    help:
+      - "&a&l=== Sell Commands ==="
+      - "&e/sell &7- Open sell menu"
+      - "&e/sell help &7- Show this help"
+      - "&e/sell hand &7- Sell item in hand"
+      - "&e/sell hand <amount> &7- Sell specific amount"
+      - "&e/sell all &7- Sell all sellable items"
+      - "&e/sell all <item> &7- Sell all specific items"
+      - "&e/sell check &7- Check value of item in hand"
+      - "&e/sell list &7- List sellable items"
+    
+    hand-empty: "&8[&6DynamicMarket&8] &cYou are not holding any item!"
+    check-result: "&8[&6DynamicMarket&8] &eItem in hand: &a{item} &7- Sell price: &a${price} &7(You own: &b{amount}&7)"
+    list-header: "&a&l=== Sellable Items ==="
+    list-item: "&7▪ &e{item} &7x{amount} - &a${price} each &7(Total: &a${total}&7)"
+    list-empty: "&8[&6DynamicMarket&8] &cYou don't have any sellable items!"
+    
+# Admin messages
+admin:
+  # General admin messages
+  category-created: "&8[&6DynamicMarket&8] &aCategory '{category}' created successfully!"
+  category-removed: "&8[&6DynamicMarket&8] &aCategory '{category}' removed successfully!"
+  category-exists: "&8[&6DynamicMarket&8] &cCategory '{category}' already exists!"
+  category-not-found: "&8[&6DynamicMarket&8] &cCategory '{category}' not found!"
+  
+  item-added: "&8[&6DynamicMarket&8] &aItem '{item}' added to category '{category}'!"
+  item-removed: "&8[&6DynamicMarket&8] &aItem '{item}' removed from market!"

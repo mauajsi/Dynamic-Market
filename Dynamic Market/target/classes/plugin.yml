@@ -1,0 +1,196 @@
+name: DynamicMarket
+version: 1.0.0
+main: com.dynamicmarket.DynamicMarket
+api-version: 1.20
+author: YourName
+description: A comprehensive dynamic market plugin with fluctuating prices based on supply and demand
+website: https://github.com/yourname/dynamicmarket
+
+commands:
+  market:
+    description: Open the market GUI or execute market commands
+    usage: |
+      /market - Open market GUI
+      /market help - Show help
+      /market stats - View statistics
+      /market search <item> - Search items
+      /market category <name> - Open category
+      /market reload - Reload market (admin)
+    aliases: [dm, shop]
+    
+  sell:
+    description: Sell items to the market
+    usage: |
+      /sell - Open sell GUI
+      /sell help - Show help
+      /sell hand [amount] - Sell item in hand
+      /sell all [item] - Sell all items
+      /sell check - Check sell value
+      /sell list - List sellable items
+    aliases: [sellitem]
+    
+  marketadmin:
+    description: Admin commands for market management
+    usage: |
+      /marketadmin help - Show admin help
+      /marketadmin category <add|remove> <name> - Manage categories
+      /marketadmin item <add|remove|setprice|move> - Manage items
+      /marketadmin reset - Reset market
+      /marketadmin backup [name] - Create backup
+      /marketadmin restore <name> - Restore backup
+      /marketadmin info - Show market info
+      /marketadmin stock <item> <amount> - Set item stock
+      /marketadmin addstock <item> <amount> - Increase item stock
+      /marketadmin removestock <item> <amount> - Decrease item stock
+    permission: market.admin
+    aliases: [madmin, marketadm]
+    
+  marketsettings:
+    description: Configure market settings
+    usage: |
+      /marketsettings - Show all settings
+      /marketsettings <setting> - Show specific setting
+      /marketsettings <setting> <value> - Change setting
+      /marketsettings help - Show help
+    permission: market.admin.settings
+    aliases: [msettings, marketconfig]
+    
+  setslot:
+    description: Set category GUI slots
+    usage: |
+      /setslot <category> <slot> - Set category slot
+      /setslot <category> - Show current slot
+      /setslot list - List all slots
+      /setslot auto - Auto-assign slots
+    permission: market.admin.slot
+    aliases: [slot, categoryslot]
+
+depend:
+  - Vault
+
+softdepend:
+  - PlaceholderAPI
+  - WorldGuard
+  - Towny
+
+loadbefore:
+  - Essentials
+
+permissions:
+  # Basic user permissions
+  market.use:
+    description: Allows access to the market
+    default: true
+    
+  market.sell:
+    description: Allows selling items to the market
+    default: true
+    
+  market.buy:
+    description: Allows buying items from the market
+    default: true
+    
+  # Admin permissions
+  market.admin:
+    description: Base admin permission (includes all admin permissions)
+    default: op
+    children:
+      - market.admin.category
+      - market.admin.add
+      - market.admin.remove
+      - market.admin.setprice
+      - market.admin.move
+      - market.admin.reset
+      - market.admin.slot
+      - market.admin.settings
+      - market.admin.reload
+      - market.admin.backup
+      - market.admin.restore
+      - market.admin.stock
+      - market.admin.addstock
+      - market.admin.removestock
+      
+  market.admin.category:
+    description: Allows creation and management of market categories
+    default: op
+    
+  market.admin.add:
+    description: Permits adding new items to the market
+    default: op
+    
+  market.admin.remove:
+    description: Allows removal of items from any market category
+    default: op
+    
+  market.admin.setprice:
+    description: Enables price modifications for existing items
+    default: op
+    
+  market.admin.move:
+    description: Permits moving items between different categories
+    default: op
+    
+  market.admin.reset:
+    description: Allows resetting the entire market to default state
+    default: op
+    
+  market.admin.slot:
+    description: Allows changing category positions in GUI
+    default: op
+    
+  market.admin.settings:
+    description: Allows modifying market settings
+    default: op
+    
+  market.admin.reload:
+    description: Allows reloading market data and configuration
+    default: op
+    
+  market.admin.backup:
+    description: Allows creating market backups
+    default: op
+    
+  market.admin.restore:
+    description: Allows restoring market from backups
+    default: op
+
+  market.admin.stock:
+    description: Allows setting item stock
+    default: op
+
+  market.admin.addstock:
+    description: Allows increasing item stock
+    default: op
+
+  market.admin.removestock:
+    description: Allows decreasing item stock
+    default: op
+    
+  # Special permissions
+  market.bypass.cooldown:
+    description: Bypasses transaction cooldowns
+    default: false
+    
+  market.bypass.limits:
+    description: Bypasses purchase and sell limits
+    default: false
+    
+  market.vip.prices:
+    description: Receives VIP pricing (discounts)
+    default: false
+    
+  market.vip.silver:
+    description: Silver VIP level (5% discount)
+    default: false
+    
+  market.vip.gold:
+    description: Gold VIP level (10% discount)
+    default: false
+    
+  market.vip.diamond:
+    description: Diamond VIP level (15% discount)
+    default: false
+    
+  market.notifications:
+    description: Receives market notifications and updates
+    default: op
