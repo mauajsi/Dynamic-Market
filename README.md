@@ -50,16 +50,27 @@
 #  🔑 Permissions 
 
  market.admin.category → Create & manage categories 
+ 
  market.admin.add → Add new items 
+ 
  market.admin.remove → Remove items from categories 
+ 
  market.admin.setprice → Change item prices 
+ 
  market.admin.move → Move items between categories 
+ 
  market.admin.reset → Reset the market 
+ 
  market.admin.stock → Set item stock 
+ 
  market.admin.addstock → Increase item stock 
+ 
  market.admin.removestock → Decrease item stock 
+ 
  market.admin.slot → Change GUI category positions 
+ 
  market.admin → Grants all admin permissions 
+ 
  
 #  📊 Pricing System
 
