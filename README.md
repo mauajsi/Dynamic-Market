@@ -23,17 +23,29 @@
  /sell → Opens the market GUI to sell items 
 ### Admin Commands 
  /marketadmin addcategory <name> <icon> → Create a new category 
+ 
  /marketadmin add <category> <price> → Add the item in hand to the market 
+ 
  /marketadmin remove <category> <item> → Remove an item from the market 
+ 
  /marketadmin setprice <category> <item> <buy_price> [sell_price] → Set custom prices 
+ 
  /marketadmin move <from> <to> <item> → Move items between categories 
+ 
  /marketadmin reset → Reset the market to default 
+ 
  /marketadmin stock <category> <item> <amount> → Set item stock 
+ 
  /marketadmin addstock <category> <item> <amount> → Increase item stock 
+ 
  /marketadmin removestock <category> <item> <amount> → Decrease item stock 
+ 
  /marketsettings <setting> <value> → Change market settings in-game 
+ 
  /setslot <category> <slot> → Set GUI slot position for a category 
+ 
  /marketadmin setslot <category> <item> <slot> → Set GUI slot position for an item in a category
+ 
  
 #  🔑 Permissions 
 
