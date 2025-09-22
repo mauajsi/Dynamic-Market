@@ -33,6 +33,7 @@
  /marketadmin removestock <category> <item> <amount> → Decrease item stock 
  /marketsettings <setting> <value> → Change market settings in-game 
  /setslot <category> <slot> → Set GUI slot position for a category 
+ /marketadmin setslot <category> <item> <slot> → Set GUI slot position for an item in a category
  
 #  🔑 Permissions 
 
